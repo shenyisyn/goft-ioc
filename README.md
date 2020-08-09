@@ -16,6 +16,12 @@ func(this *ServiceConfig) OrderService() *services.OrderService {
 }  
 
 ```
+## 注入写法
+```go
+type UserService struct {
+	Order *OrderService `inject:"-"`
+}
+```
 ## 使用 初始化
 ```go
 	serviceConfig:=Config.NewServiceConfig()
@@ -25,8 +31,8 @@ func(this *ServiceConfig) OrderService() *services.OrderService {
  
 		userService:=services.NewUserService()
 		Injector.BeanFactory.Apply(userService) //处理依赖
-		fmt.Println(userService.Order.Name())
-		userService.GetUserInfo(3)
+		fmt.Println(userService.Order)
+		 
 
 	}
 ```

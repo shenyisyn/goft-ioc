@@ -5,7 +5,7 @@ import (
 )
 
 type UserService struct {
-	Order IOrder `inject:"-"`
+	Order *OrderService `inject:"-"`
 }
 
 func NewUserService() *UserService {
