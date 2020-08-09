@@ -18,7 +18,7 @@ func (this BeanMapper) get(bean interface{}) reflect.Value {
 	if bt, ok := bean.(reflect.Type); ok {
 		t = bt
 	} else {
-		reflect.TypeOf(bean)
+		t = reflect.TypeOf(bean)
 	}
 	if v, ok := this[t]; ok {
 		return v
