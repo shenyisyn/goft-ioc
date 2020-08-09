@@ -16,12 +16,19 @@ func(this *ServiceConfig) OrderService() *services.OrderService {
 }  
 
 ```
-## 注入写法
+## 单例注入写法
 ```go
 type UserService struct {
 	Order *OrderService `inject:"-"`
 }
 ```
+## 多例注入写法
+```go
+type UserService struct {
+	Order *OrderService `inject:"ServiceConfig.OrderService()"`
+}
+```
+多例就是类名+方法名执行，每次都会创建一个新实例
 ## 使用 初始化
 ```go
 	serviceConfig:=Config.NewServiceConfig()
