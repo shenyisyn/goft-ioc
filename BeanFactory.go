@@ -56,6 +56,9 @@ func (this *BeanFactoryImpl) Get(v interface{}) interface{} {
 	}
 	return nil
 }
+func (this *BeanFactoryImpl) GetBeanMapper() BeanMapper {
+	return this.beanMapper
+}
 
 //处理依赖注入
 func (this *BeanFactoryImpl) Apply(bean interface{}) {
