@@ -2,7 +2,7 @@
 基于Golang的轻量级IoC容器。支持单例、多例、运行时获取bean
 
 ## 安装
-go get -u github.com/shenyisyn/goft-ioc@v0.5.1
+go get -u github.com/shenyisyn/goft-ioc@v0.5.2
 
 ## 使用 -- 创建配置类
 ```go
