@@ -35,7 +35,7 @@ func (this *BeanFactoryImpl) Config(cfgs ...interface{}) {
 		}
 		this.Set(cfg)                       //把config本身也加入bean
 		this.ExprMap[t.Elem().Name()] = cfg //自动构建 ExprMap
-		this.Apply(cfg)                     //处理依赖注入
+		this.Apply(cfg)                     //处理依赖注入 (new)
 		v := reflect.ValueOf(cfg)
 		for i := 0; i < t.NumMethod(); i++ {
 			method := v.Method(i)
